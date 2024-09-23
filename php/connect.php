@@ -1,16 +1,16 @@
 <?php
 // Database connection details
-$severname = "mysql";
-$username = "root"; 
-$password = "root"
-$dbname = "teenzeedb";
+$servername = "localhost";  // Corrected the variable name
+$username = "root";
+$password = "";
+$dbname = "teenzee";
 
 // Creating connection
-$conn = new mysqli($severname, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname, 3306);
 
-//check connection
+// Check connection
 if ($conn->connect_error) {
-    die("Connection failed: ". &conn->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 }
-echo "Connected sucessfully";
+echo "welcome";
 ?>

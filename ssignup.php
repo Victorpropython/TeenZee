@@ -1,3 +1,9 @@
+<?php
+include ("php/connect.php");
+session_start ();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +32,7 @@
     <main>
         <!-- Navigation Bar -->
         <nav>
-            <a href="login.html">Register</a>
+            <a href="form.php">Register</a>
             <a href="about.html">About Us</a>
             <a href="contact.html">Contact</a>
             <a href="resources.html">Resources</a>
@@ -36,37 +42,37 @@
     <div class="bbody">
         <div class="login-container">
             <div class="form-box">
-                <form id="login-form" action="/php/connect.php" method="POST" name="Formfill">
-                    <h2>Login</h2>
-                    <div class="input-box">
-                        <box-icon type='solid' name='envelope'>
-                        <input type="text" name="Username" placeholder="Username" >
-                        </box-icon>
-                    </div>
-                    <div class="input-box">
-                        <input type="text" name="Email" placeholder="Email">
-                    </div>
-                    <div class="input-box">
-                        <input type="text" name="Password" placeholder="Passsword">
-                    </div>
-                    <div class="input-box">
-                        <select id="role" name="role" type="text" placeholder="Role"> 
-                            <option value="Role" ></option>   
-                            <option value="student">Student</option>
-                            <option value="mentor">Mentor</option>
-                        </select>                      
-                    </div>
-                    <div class="btn">
-                        <input type="submit" value="Login">
-                    </div>
-                    <div class="group">
-                        <span><a href="#">Forgot Passsword</a></span>
-                        <span><p>Don't have an account? <br><a href="signup.html">Sign up here</a></p></span>
-                    </div>
-                </form>
-            
+            <form id="signup-form" action="php/signup.php" method="POST" name="Formfill">
+                <h2>Register</h2>
+                <div class="input-box">
+                    <input type="text" name="Username" placeholder="Username" required>
+                </div>
+                <div class="input-box">
+                    <input type="email" name="Email" placeholder="Email" required>
+                </div>
+                <div class="input-box">
+                    <input type="password" name="Password" placeholder="Password" required>
+                </div>
+                <div class="input-box">
+                    <input type="password" name="ConfirmPassword" placeholder="Confirm Password" required>
+                </div>
+                <div class="input-box">
+                    <select name="role" required>
+                        <option value="">Select Role</option>
+                        <option value="student">Student</option>
+                        <option value="mentor">Mentor</option>
+                    </select>
+                </div>
+                <div class="btn">
+                    <input type="submit" name="signup" value="Signup"> <!-- Add name="signup" here -->
+                </div>
+                <div class="group">
+                    <span><p>Already have an Accout <br><a href="form.php">Sign in here</a></p></span>
+                </div>
+            </form>            
         </div>
     </div>
+    <div></div>
     <div class="space"></div>
     <footer>
         <p>Follow us on social media:</p>
@@ -82,3 +88,4 @@
 
 </body>
 </html>
+                
